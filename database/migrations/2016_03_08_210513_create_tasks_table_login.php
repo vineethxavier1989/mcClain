@@ -14,6 +14,12 @@ class CreateTasksTableLogin extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
+		   $table->string('name', 32);
+            $table->string('username', 32);
+            $table->string('email', 320);
+            $table->string('password', 64);            
+            $table->string('remember_token', 100)->nullable();
+			
             $table->timestamps();
         });
     }
